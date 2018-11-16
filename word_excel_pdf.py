@@ -19,7 +19,7 @@ class AxWidget(QWidget):
         layout.addWidget(QPushButton('选择excel, word, pdf文件', self, clicked=self.onOpenFile))
 
     def onOpenFile(self):
-        
+
         path, _ = QFileDialog.getOpenFileName(self, '请选择文件', '', 'excel(*.xlsx *.xls);;word(*.docx *.doc);;pdf(*.pdf)')
 
 
@@ -56,8 +56,6 @@ class AxWidget(QWidget):
         self.layout().removeWidget(self.axWidget)
         del self.axWidget
         super(AxWidget, self).closeEvent(event)
-
-
 
 
 if __name__ == "__main__":
