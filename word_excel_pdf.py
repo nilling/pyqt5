@@ -19,20 +19,20 @@ class AxWidget(QWidget):
         layout.addWidget(QPushButton('选择excel, word, pdf文件', self, clicked=self.onOpenFile))
 
     def onOpenFile(self):
-        print 45
+        
         path, _ = QFileDialog.getOpenFileName(self, '请选择文件', '', 'excel(*.xlsx *.xls);;word(*.docx *.doc);;pdf(*.pdf)')
-        print path
-        print _
+
+
         if not path:
             return
-        if _.find('.doc') != -1:
-            print 2
+        if _.find('*.doc') != -1:
+
             return self.openOffice(path, 'Word.Application')
-        if _.find('.xls') != -1:
-            print 3
+        if _.find('*.xls') != -1:
+
             return self.openOffice(path, 'Excel.Application')
-        if _.find('.pdf') != -1:
-            print 11
+        if _.find('*.pdf') != -1:
+
             return self.openPdf(path)
 
     def openOffice(self, path, app):
